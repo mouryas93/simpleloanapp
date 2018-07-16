@@ -24,7 +24,7 @@ public class ApplicationController {
 	ApplicationDecisionService appService;
 
 	@RequestMapping(value = "/apply", method = RequestMethod.POST)
-	public @ResponseBody Object submitApplication(@RequestBody @Valid LoanApplication application, Model model,
+	public @ResponseBody Object submitApplication(@Valid @RequestBody LoanApplication application, Model model,
 			BindingResult bindingResult) {
 
 		System.out.println("Data in object..." + application);

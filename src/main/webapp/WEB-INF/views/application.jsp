@@ -2,26 +2,121 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Application</title>
 </head>
 <body>
 
-	Please fill in the application below
 	<!-- <form action="apply" method="POST" id="testform"> -->
-		<div class="input-group mb-3">
-		  <input type="text" name="firstName" class="form-control firstName" placeholder="FirstName" aria-label="Username"><br>
-		  <input type="text" name="lastName" class="form-control lastName" placeholder="LastName" aria-label="Password"><br>
-		  <input type="text" name="ssn" class="form-control ssn" placeholder="SSN" aria-label="Password"><br>
-		  <input type="text" name="address" class="form-control address" placeholder="Address" aria-label="Password"><br>
-		  <input type="text" name="city" class="form-control city" placeholder="City" aria-label="Password"><br>
-	      <input type="text" name="zipcode" class="form-control zipcode" placeholder="ZipCode" aria-label="Password"><br>
-	      <input type="text" name="cartype" class="form-control cartype" placeholder="Car Type" aria-label="Password"><br>
-	      <input type="text" name="loanAmount" class="form-control loanAmount" placeholder="Loan Amount" aria-label="Password"><br>
-	      <input type="text" name="downPayment" class="form-control downPayment" placeholder="Down Payment" aria-label="Password"><br>
-		</div>
-		<button type="button" class="btn btn-primary apply">Click here to Apply</button>
+	<div class="container">
+
+	  <jsp:include page="header.jsp"/>
+
+      <div class="row">
+	      
+	      <div class="col-md-2"></div>
+	      
+	      <div class="col-md-8">
+			  
+			  <div class="row">
+
+			  	<div class="col-lg-6">
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">First Name</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="firstName" class="form-control firstName" placeholder="FirstName" aria-label="FirstName">
+					  	</div>
+					  </div>
+					 
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">Last Name</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="firstName" class="form-control lastName" placeholder="LastName" aria-label="LastName">
+					  	</div>
+					  </div>
+					
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">SSN</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="ssn" class="form-control ssn" placeholder="SSN" aria-label="SSN">
+					  	</div>
+					  </div>
+		
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">Address</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="address" class="form-control address" placeholder="Address" aria-label="Address">
+					  	</div>
+					  </div>
+					  
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">City</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="city" class="form-control city" placeholder="City" aria-label="City">
+					  	</div>
+					  </div>
+			  	
+			  	</div>
+
+			  	<div class="col-lg-6">
+			  	
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">Zip Code</label>
+					  	<div class="col-sm-7">
+					  		<input type="text" name="zipcode" class="form-control zipcode" placeholder="ZipCode" aria-label="ZipCode">
+					  	</div>
+					  </div>
+					  	
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  	
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">First Name</label>
+					  	<div class="col-sm-7">
+							<input type="text" name="cartype" class="form-control cartype" placeholder="Car Type" aria-label="Car Type">
+					  	</div>
+					  </div>
+					  	
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">Loan Amount</label>
+					  	<div class="col-sm-7">
+							<input type="text" name="loanAmount" class="form-control loanAmount" placeholder="Loan Amount" aria-label="Loan Amount">
+					  	</div>
+					  </div>
+			
+					  <div class="col-xs-12" style="height:10px;"></div>
+					  	
+					  <div class="col-sm-12 form-group row">
+					  	<label for="" class="col-sm-5 col-form-label">Down Payment</label>
+					  	<div class="col-sm-7">
+							<input type="text" name="downPayment" class="form-control downPayment" placeholder="Down Payment" aria-label="Down Payment">
+					  	</div>
+					  </div>
+			  	</div>
+			  </div>
+			  		  	
+			  <div class="col-xs-12" style="height:20px;"></div>
+			  
+			  <div class="col-sm-12 form-group row">
+			  	<div class="col-sm-12">
+					<button type="button" class="btn btn-primary apply">Submit Application</button>
+			  	</div>
+			  </div>	
+		  </div>
+	  </div>
+	</div>
 	<!-- </form> -->
-	
 	<div id="info"></div>
 	
 </body>
@@ -45,6 +140,8 @@ $(document).ready(function(){
 	    /*$.post("apply", $( "#testform" ).serialize());*/
 
 	    $(".apply").click(function(){
+	    	
+	    	$('#info').html('');	    	
 	    
 	    	var payload = {
     			firstName: $('.firstName').val(),

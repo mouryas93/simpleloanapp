@@ -3,37 +3,36 @@
 <html>
 <head>
 <title>Home</title>
-<link
-	href="${pageContext.request.contextPath}/resources/css/bootstrap.css"
-	type="stylesheet">
-
 </head>
 <body>
 
 
-	<div class="container">
-		
+
+<div class="container">
+
+	<jsp:include page="header.jsp"/>
+
+    <div class="col-xs-12" style="height:60px"></div>
+    
+	<form action="login" method="POST">
 		<div class="row">
-			<div class="col-md">
-				<img
-					src="${pageContext.request.contextPath}/resources/images/logo.jpg">
+		    <div class="col-md-4"></div>
+			<div class="col-md-4">
+				  <input type="text" name="userName" class="form-control name" placeholder="Username" aria-label="Username">
+				  <div class="col-xs-12" style="height:20px;"></div>
+				  <input type="password" name="password" class="form-control password" placeholder="Password" aria-label="Password">
+				  <div class="col-xs-12" style="height:20px;"></div>
+	  			  <div class="row">
+	  			  	<div class="col-md-8"></div>
+	  			  	<div class="col-md-4"><button type="submit" class="btn btn-primary submit">Login</button></div>
+	  			  </div>
 			</div>
-		</div>	
-		<br><br>
-		<div class="row">	
-			<form action="login" method="POST">
-				<div class="col-md">
-					<div class="input-group mb-3">
-					  <input type="text" name="userName" class="form-control name" placeholder="Username" aria-label="Username">
-					  <input type="password" name="password" class="form-control password" placeholder="Password" aria-label="Password">
-					  <button type="submit" class="btn btn-primary submit">Click here to Login</button>
-					</div>
-				</div>
-			</form>
 		</div>
-		
-	 <div id="info"></div>
-	</div>
+	</form>
+	
+ 	<div id="info"></div>
+
+</div>
 
 </body>
 
@@ -72,9 +71,6 @@
     	$.get('orderInfo');
     });
  */    
-    
-}); */
-
 
 </script>
 
