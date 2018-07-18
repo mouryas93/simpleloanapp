@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.activeweb.app.beans.LoanApplication;
@@ -64,10 +63,13 @@ public class ApplicationController {
 		return AutoLoanAppConstants.SIMPLELOANAPPPAGE;
 	}
 
-	// Testing pending
 	@RequestMapping(value = "/application", method = RequestMethod.POST)
-	public String deleteApplication(@ModelAttribute LoanApplication loanApplication) {
+	public String deleteApplication(@ModelAttribute LoanApplication loanApplication, Model model) {
+		
 		appService.deleteApplication(loanApplication.getApplicationId());
+		
+		model.addAttribute("application_status", "SUCCESS");
+		
 		return AutoLoanAppConstants.DECISIONPAGE;
 	}
 
