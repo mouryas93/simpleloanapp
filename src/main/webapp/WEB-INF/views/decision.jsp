@@ -6,9 +6,15 @@
 </head>
 <body>
 
-	${status}
+<div class="container">
+
+	<jsp:include page="header.jsp"/>
 	
-	${errors}
+	<jsp:include page="navbar.jsp"/>
+
+	${application_status}
+
+</div>
 
 </body>
 

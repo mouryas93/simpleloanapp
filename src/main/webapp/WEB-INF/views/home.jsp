@@ -5,12 +5,11 @@
 <title>Home</title>
 </head>
 <body>
-
-
-
 <div class="container">
 
 	<jsp:include page="header.jsp"/>
+	
+	<jsp:include page="navbar.jsp"/>
 
     <div class="col-xs-12" style="height:60px"></div>
     

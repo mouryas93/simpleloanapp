@@ -21,6 +21,7 @@ public class LoanApplication {
 	private BigDecimal loanAmount;
 	private BigDecimal downPayment;
 	private List<String> carNames;
+	private Integer applicationId;
 
 	public String getFirstName() {
 		return firstName;
@@ -86,8 +87,6 @@ public class LoanApplication {
 		this.loanAmount = loanAmount;
 	}
 
-	
-
 	public List<String> getCarNames() {
 		return carNames;
 	}
@@ -96,19 +95,20 @@ public class LoanApplication {
 		this.carNames = carNames;
 	}
 
-	@Override
-	public String toString() {
-		return "LoanApplication [firstName=" + firstName + ", lastName=" + lastName + ", ssn=" + ssn + ", address="
-				+ address + ", city=" + city + ", zipcode=" + zipcode + ", cartype=" + cartype + ", loanAmount="
-				+ loanAmount + ", carNames=" + carNames + "]";
-	}
-
 	public BigDecimal getDownPayment() {
 		return downPayment;
 	}
 
 	public void setDownPayment(BigDecimal downPayment) {
 		this.downPayment = downPayment;
+	}
+
+	public Integer getApplicationId() {
+		return applicationId;
+	}
+
+	public void setApplicationId(Integer applicationId) {
+		this.applicationId = applicationId;
 	}
 
 }

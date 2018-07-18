@@ -11,12 +11,21 @@ public class ApplicationDecisionService {
 
 	@Autowired
 	ApplicationDAO appDAO;
-	
-	public void applyLoan(LoanApplication application) {
-		
-		
-		appDAO.persistApplication(application);
-		
+
+	public Integer applyLoan(LoanApplication application) {
+		return appDAO.persistApplicationVariation(application);
+	}
+
+	public Integer getPendingAppsCount() {
+		return appDAO.retrieveApplicationCount();
+	}
+
+	public LoanApplication getApplication(Integer applicationId) {
+		return appDAO.retrieveApplication(applicationId);
+	}
+
+	public boolean deleteApplication(Integer applicationId) {
+		return appDAO.deleteApplication(applicationId);
 	}
 	
 }

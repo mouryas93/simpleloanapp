@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false" %>
 <html>
 <head>
@@ -9,15 +10,15 @@
 	<div class="container">
 
 	  <jsp:include page="header.jsp"/>
-	  
-	  <jsp:include page="navbar.jsp"/>
 
       <div class="row" id="application-form">
 	      
 	      <div class="col-md-2"></div>
 	      
 	      <div class="col-md-8">
-			  
+			
+			<form:form action="formapply" method="POST" modelAttribute="loanApplication">	
+						  
 			  <div class="row">
 
 			  	<div class="col-lg-6">
@@ -25,7 +26,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">First Name</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="firstName" class="form-control firstName" placeholder="FirstName" aria-label="FirstName">
+					  		<form:input type="text" path="firstName" class="form-control firstName" placeholder="FirstName" aria-label="FirstName"/>
 					  	</div>
 					  </div>
 					 
@@ -34,7 +35,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">Last Name</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="firstName" class="form-control lastName" placeholder="LastName" aria-label="LastName">
+					  		<form:input type="text" path="firstName" class="form-control lastName" placeholder="LastName" aria-label="LastName"/>
 					  	</div>
 					  </div>
 					
@@ -43,7 +44,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">SSN</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="ssn" class="form-control ssn" placeholder="SSN" aria-label="SSN">
+					  		<form:input type="text" path="ssn" class="form-control ssn" placeholder="SSN" aria-label="SSN"/>
 					  	</div>
 					  </div>
 		
@@ -52,7 +53,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">Address</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="address" class="form-control address" placeholder="Address" aria-label="Address">
+					  		<form:input type="text" path="address" class="form-control address" placeholder="Address" aria-label="Address"/>
 					  	</div>
 					  </div>
 					  
@@ -61,7 +62,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">City</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="city" class="form-control city" placeholder="City" aria-label="City">
+					  		<form:input type="text" path="city" class="form-control city" placeholder="City" aria-label="City"/>
 					  	</div>
 					  </div>
 			  	
@@ -74,7 +75,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">Zip Code</label>
 					  	<div class="col-sm-7">
-					  		<input type="text" name="zipcode" class="form-control zipcode" placeholder="ZipCode" aria-label="ZipCode">
+					  		<form:input type="text" path="zipcode" class="form-control zipcode" placeholder="ZipCode" aria-label="ZipCode"/>
 					  	</div>
 					  </div>
 					  	
@@ -83,7 +84,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">First Name</label>
 					  	<div class="col-sm-7">
-							<input type="text" name="cartype" class="form-control cartype" placeholder="Car Type" aria-label="Car Type">
+							<form:input type="text" path="cartype" class="form-control cartype" placeholder="Car Type" aria-label="Car Type"/>
 					  	</div>
 					  </div>
 					  	
@@ -92,7 +93,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">Loan Amount</label>
 					  	<div class="col-sm-7">
-							<input type="text" name="loanAmount" class="form-control loanAmount" placeholder="Loan Amount" aria-label="Loan Amount">
+							<form:input type="text" path="loanAmount" class="form-control loanAmount" placeholder="Loan Amount" aria-label="Loan Amount"/>
 					  	</div>
 					  </div>
 			
@@ -101,7 +102,7 @@
 					  <div class="col-sm-12 form-group row">
 					  	<label for="" class="col-sm-5 col-form-label">Down Payment</label>
 					  	<div class="col-sm-7">
-							<input type="text" name="downPayment" class="form-control downPayment" placeholder="Down Payment" aria-label="Down Payment">
+							<form:input type="text" path="downPayment" class="form-control downPayment" placeholder="Down Payment" aria-label="Down Payment"/>
 					  	</div>
 					  </div>
 			  	</div>
@@ -111,12 +112,16 @@
 			  
 			  <div class="col-sm-12 form-group row">
 			  	<div class="col-sm-12">
-					<button type="button" class="btn btn-primary apply">Submit Application</button>
+					Submit Application <input type="submit" class="btn btn-primary apply">
 			  	</div>
 			  </div>	
+			  
+		  </form:form>
+		  	  
 		  </div>
 	  </div>
 	</div>
+
 	<div id="info"></div>
 	
 </body>
@@ -127,39 +132,17 @@
 
 $(document).ready(function(){
 
-	    $(".apply").click(function(){
-	    	
-	    	$('#info').html('');	    	
-	    
-	    	var payload = {
-    			firstName: $('.firstName').val(),
-    			lastName : $('.lastName').val(),
-    			ssn : $('.ssn').val(),
-    			address : $('.address').val(),
-    			city : $('.city').val(),
-    			zipcode: $('.zipcode').val(),
-    			cartype : $('.cartype').val(),
-    			loanAmount : $('.loanAmount').val(),
-    			downPayment : $('.downPayment').val()
-	   		};
-	    	
-		    $.ajax({
-	    		   url: 'apply',
-	    		   type: 'POST',
-	    		   dataType: 'json',	
-	    		   contentType : 'application/json',
-	    		   data: JSON.stringify(payload), // converts Javascript object to JSON object, as Backend understands only JSON
-	    		   success: function(data) {
-					   console.log("in success");	
-					   $("#application-form").html('');
-	    			   $('#info').html('Application Submitted sucessfully');
-	    		   },
-	    		   error: function(data) {
-	     		      $('#info').html('<p>An error has occurred</p>',data);
-	     		   }
-	    	});
-		    
+	   /* $(".apply").click(function(){
+		var payload = {
+			firstName: $('.firstName').val(),
+			lastName : $('.lastName').val(),
+			ssn : $('.ssn').val()
+		};
+	    $.post("apply", JSON.stringify(payload), function(data, status){
+	        alert("Data: " + data + "\nStatus: " + status);
 	    });
+	    
+	    /*$.post("apply", $( "#testform" ).serialize());*/
 	
 });	
 	
