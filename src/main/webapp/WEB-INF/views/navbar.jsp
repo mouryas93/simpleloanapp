@@ -1,6 +1,9 @@
 <div class="container">
 	<nav class="navbar navbar-expand-sm bg-light">
 	  <ul class="navbar-nav">
+            <li class="nav-item">
+	      <a class="nav-link" href="home">Apply loan</a>
+	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="appsCount">Applications Count</a>
 	    </li>
